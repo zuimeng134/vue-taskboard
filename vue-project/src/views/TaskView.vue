@@ -27,7 +27,8 @@
     </div>
 
     <!-- 任务表格 -->
-    <el-table :data="filteredTasks" border stripe style="width: 100%; margin-top: 20px;">
+  <div class="table-responsive">
+    <el-table :data="filteredTasks" border stripe style="width: 100%; min-width:800px;">
       <el-table-column prop="id" label="ID" width="60" />
       <el-table-column prop="title" label="任务标题" min-width="180" />
       <el-table-column prop="description" label="描述" min-width="200" show-overflow-tooltip />
@@ -51,6 +52,7 @@
       </el-table-column>
     </el-table>
 
+  </div>
     <!-- 新增/编辑任务弹窗 -->
     <el-dialog
       v-model="dialogVisible"
@@ -249,5 +251,13 @@ onMounted(() => {
 .actions {
   display: flex;
   align-items: center;
+}
+/* 表格响应式容器 */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+  border-radius: 4px;
+  -webkit-overflow-scrolling: touch; /* 在 iOS 上平滑滚动 */
 }
 </style>

@@ -375,11 +375,27 @@ onBeforeUnmount(() => {
   margin: 0;
 }
 
+/* 基础样式 - 不要修改这个 */
 .stats-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
   margin-bottom: 24px;
+}
+
+/* 响应式调整 - 在这后面添加 */
+/* 在手机上变成2列 */
+@media (max-width: 640px) {
+  .stats-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 在超小屏幕上变成1列 */
+@media (max-width: 480px) {
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
 }
 
 .stats-card {
@@ -458,10 +474,6 @@ onBeforeUnmount(() => {
 @media (max-width: 768px) {
   .charts-row {
     grid-template-columns: 1fr;
-  }
-  
-  .stats-cards {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>
