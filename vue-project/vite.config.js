@@ -10,6 +10,9 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  // 👇 关键：GitHub Pages 子目录路径，必须和仓库名一致
+  base: '/vue-taskboard/',
+
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

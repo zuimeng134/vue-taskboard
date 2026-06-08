@@ -1,11 +1,11 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(), // hash 模式
   routes: [
     {
       path: '/',
-      redirect: '/dashboard' // 默认重定向到仪表盘
+      redirect: '/dashboard'
     },
     {
       path: '/login',
